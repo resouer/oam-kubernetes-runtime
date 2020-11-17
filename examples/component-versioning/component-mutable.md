@@ -45,11 +45,11 @@ data:
         - env:
           - name: TEST_ENV
             value: test
-          image: wordpress:4.6.1-apache
-          name: wordpress
+          image: nginx
+          name: web
           ports:
           - containerPort: 80
-            name: wordpress
+            name: web
   status:
     latestRevision:
       name: example-component-bsemlvvoceaedeu80kfg
@@ -97,11 +97,11 @@ spec:
   - env:
     - name: TEST_ENV
       value: test
-    image: wordpress:4.6.1-apache
-    name: wordpress
+    image: nginx
+    name: web
     ports:
     - containerPort: 80
-      name: wordpress
+      name: web
 status:
   ...
 ```
@@ -166,11 +166,11 @@ spec:
   - env:
     - name: TEST_ENV
       value: test2
-    image: wordpress:4.6.1-apache
-    name: wordpress
+    image: nginx
+    name: web
     ports:
     - containerPort: 80
-      name: wordpress
+      name: web
 status:
   ...
 ```
@@ -249,8 +249,8 @@ spec:
   - env:
     - name: TEST_ENV
       value: test
-    image: wordpress:4.6.1-apache
-    name: wordpress
+    image: nginx
+    name: web
    ...
 ```
 
@@ -293,11 +293,11 @@ spec:
   - env:
     - name: TEST_ENV
       value: test
-    image: wordpress:4.6.1-apache
-    name: wordpress
+    image: nginx
+    name: web
     ports:
     - containerPort: 80
-      name: wordpress
+      name: web
 ```
 
 So specify revisionName will let AppConfig use a fixed revision of component.

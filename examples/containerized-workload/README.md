@@ -1,6 +1,6 @@
-# Custom Workload
+# Containerized Workload
 
-This is an example web application with a custom workload
+This is an example web application with a containerized workload
 
 ## Run ApplicationConfiguration
 
@@ -16,7 +16,7 @@ secret/mysecret created
 
 ## Result
 
-An `example-component` is created (running Wordpress, which you will see on the corresponding `Service` endpoint):
+An `example-component` is created (running Nginx, which you will see on the corresponding `Service` endpoint):
 
 ```
 $ kubectl get all
@@ -36,7 +36,7 @@ NAME                                           DESIRED   CURRENT   READY   AGE
 replicaset.apps/example-component-564b7b45fd   3         3         3       47s
 ```
 
-Wordpress will respond on port 80. There is a UI, but since there is no database it will not be fully functional.
+This component will respond on port 80.
 
 ## Clean up
 

@@ -19,7 +19,7 @@ spec:
     - componentName: web-service-component
       parameterValues:
         - name: image
-          value: wordpress:php7.2
+          value: nginx:1.18.0
       traits:
         - trait:
             apiVersion: core.oam.dev/v1alpha2

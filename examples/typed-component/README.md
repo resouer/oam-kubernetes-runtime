@@ -1,6 +1,12 @@
-# Custom Workload
+# Containerized Workload by Type
 
-This is an example web application with a custom workload
+This is an example web application with a containerized workload defined by `web-service` type.
+
+> WARNING: this is a highly experimental feature and tend to be deprecated in next release. Do not try it out unless you know what you are doing.
+
+## Prerequisite
+
+Please ensure webhook is enabled for you `oam-kubernetes-runtime` installation.
 
 ## Run ApplicationConfiguration
 
@@ -15,16 +21,9 @@ applicationconfiguration.core.oam.dev/example-appconfig created
 component.core.oam.dev/web-service-component created
 ```
 
-
-> NOTE: The `oam-k8s-runtime` webhook is needed to enhance the workload in the `Component` definition. If you are running without the webhook you will need to add the following to the `spec.workload` in `sample_component.yaml`:  
->
->      apiVersion: core.oam.dev/v1alpha2
->      kind: ContainerizedWorkload
-
-
 ## Result
 
-A `web-service-component` is created (running Wordpress, which you will see on the corresponding `Service` endpoint):
+A `web-service-component` is created (running Nginx, which you will see on the corresponding `Service` endpoint):
 
 ```
 $ kubectl get all
@@ -45,7 +44,7 @@ replicaset.apps/web-service-component-6b4b8b57b7   0         0         0       2
 replicaset.apps/web-service-component-78fbdd6787   3         3         3       2m21s
 ```
 
-Wordpress will respond on port 80. There is a UI, but since there is no database it will not be fully functional.
+This component will respond on port 80.
 
 ## Clean up
 

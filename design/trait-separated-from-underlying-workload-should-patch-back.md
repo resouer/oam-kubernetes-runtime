@@ -24,8 +24,8 @@ spec:
       nodeSelector:
         disktype: ssd
       containers:
-        - name: wordpress
-          image: wordpress:4.6.1-apache
+        - name: web
+          image: nginx
     ...
 ```
 
@@ -48,11 +48,11 @@ spec:
     kind: ContainerizedWorkload
     spec:
       containers:
-        - name: wordpress
-          image: wordpress:4.6.1-apache
+        - name: web
+          image: nginx
           ports:
             - containerPort: 80
-              name: wordpress
+              name: web
           env:
             - name: TEST_ENV
               value: test
@@ -80,11 +80,11 @@ spec:
   template:
     spec:
       containers:
-        - name: wordpress
-          image: wordpress:4.6.1-apache
+        - name: web
+          image: nginx
           ports:
             - containerPort: 80
-              name: wordpress
+              name: web
           env:
             - name: TEST_ENV
               value: test
@@ -130,11 +130,11 @@ spec:
 +     nodeSelector:
 +       disktype: ssd
       containers:
-        - name: wordpress
-          image: wordpress:4.6.1-apache
+        - name: web
+          image: nginx
           ports:
             - containerPort: 80
-              name: wordpress
+              name: web
           env:
             - name: TEST_ENV
               value: test
@@ -156,11 +156,11 @@ spec:
       nodeSelector:
         disktype: ssd
       containers:
-        - name: wordpress
-          image: wordpress:4.6.1-apache
+        - name: web
+          image: nginx
           ports:
             - containerPort: 80
-              name: wordpress
+              name: web
           env:
             - name: TEST_ENV
               value: test
